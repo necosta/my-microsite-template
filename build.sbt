@@ -1,9 +1,15 @@
-name := "my-microsite-template"
+name := "my-microsite"
 organization := "com.necosta"
 
 lazy val root = (project in file("."))
-  .settings(moduleName := "site")
-
-lazy val docs = (project in file("website"))
-  .dependsOn(root)
-  .enablePlugins(MdocPlugin)
+  .settings(
+      micrositeName := "My awesome website",
+      micrositeDescription := "My totally awesome website",
+      micrositeAuthor := "Nelson Costa",
+      micrositeHomepage := "https://necosta.github.io/my-microsite-template/",
+      micrositeGithubOwner := "necosta",
+      micrositeGithubRepo := "my-microsite-template",
+      //micrositeGithubToken := getEnvVar("GITHUB_TOKEN"),
+      micrositePushSiteWith := GitHub4s
+  )
+  .enablePlugins(MicrositesPlugin)

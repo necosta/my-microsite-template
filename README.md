@@ -8,4 +8,4 @@ Experimenting with sbt-microsites plugin
 
 ## How-to
 
-* Build docs: `docs/mdoc`
+* Build microsite: `sbt makeMicrosite`
